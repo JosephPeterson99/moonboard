@@ -39,19 +39,43 @@
 
 		<div class="main-area">
 			<br><br>
-			<div class="container">
-				<div class="row">
-					<p><br><br></p>
+
+			<!-- Various modals -->
+			<div id="qpAddModal" class="modal">
+				<div class="qpAddModal">
+					<span class="qpCloseSpn">&times;</span>
+					<p>Some text in the modal...</p>
 				</div>
+			</div>
+
+			<div class="container">
+
+				<div class="row"><p><br></p></div>
 
 				<div class="row">
 					<form action="https://www.google.com/search" method="GET">
-						<input class="internet-search" type="text" name="q" id="search-box" placeholder="Search...">
+						<input type="text" name="q" id="search-box" placeholder="Search the web...">
 					</form>
 				</div>
 
+				<div class="row"><p><br></p></div>
+
 				<div class="row">
-					<h3 class="section-header">Quick Pins</h3>
+					<table style="height: 0;">
+						<tr style="height: 0;">
+							<td style="height: 0;">
+								<h3 class="section-header">Quick Pins</h3>
+							</td>
+							<td style="height: 0;">
+								<p id="qpControls" style="margin: 0;">
+									<span id="qpLeft"><</span>
+									<span id="qpAddBtn">+</span>
+									<span id="qpRight">></span>
+								</p>
+							</td>
+						</tr>
+					</table>
+					
 					<hr class="divider-top">
 					<div class="row" id="quickPins"></div>
 				</div>

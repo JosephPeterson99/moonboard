@@ -6,10 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     populateQuickPins();
 });
 
-// Quick Pins variables
-let qpList = [];
-let qpIdx = 0;
 
+// Clock //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function showTime(){ // This makes the clock go
     var date = new Date();
@@ -35,6 +33,10 @@ function showTime(){ // This makes the clock go
     setTimeout(showTime, 1000);
 }
 
+// Quick Pins /////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let qpList = [];
+let qpIdx = 0;
 
 async function getQP() {
     try {
@@ -48,7 +50,6 @@ async function getQP() {
 }
 
 function calculateMaxQP() {
-    // Adjust these values as needed
     const maxPins = 12;
     const pinWidth = 95; // Estimated width of a pin
 
@@ -65,9 +66,8 @@ async function populateQuickPins() {
     const quickPins = document.getElementById("quickPins");
     quickPins.innerHTML = '';
 
-    // Populate with actual items from qpList
     for (let i = qpIdx; i < qpIdx + maxQP && i < qpList.length; i++) {
-        let qpItem = qpList[i]; // Get individual item
+        let qpItem = qpList[i];
         let qpDiv = document.createElement('div');
         qpDiv.className = 'col';
         qpDiv.innerHTML = `
@@ -81,18 +81,15 @@ async function populateQuickPins() {
         quickPins.appendChild(qpDiv);
     }
 
-    // Calculate the number of remaining spots to fill
     let filledSpots = quickPins.children.length;
     let remainingSpots = maxQP - filledSpots;
 
-    // Fill remaining spots with blank or 'add' divs
     for (let j = 0; j < remainingSpots; j++) {
         let divToAdd = (j === remainingSpots) ? addDiv.cloneNode(true) : blankDiv.cloneNode(true);
         quickPins.appendChild(divToAdd);
     }
 }
 
-// Ensure addDiv and blankDiv are available globally or within the same scope as populateQuickPins
 let blankDiv = document.createElement('div');
 blankDiv.className = 'col';
 blankDiv.innerHTML = `
@@ -114,3 +111,11 @@ addDiv.innerHTML = `
         </a>
     </div>
 `;
+
+let qpAddModal = document.getElementById("qpAddModal");
+let qpAddBtn = document.getElementById("qpAddBtn");
+let qpCloseSpn = document.getElementsByClassName("qpCloseSpn")[0];
+
+qpAddBtn.onclick = function()       { qpAddModal.style.display = "block"; }
+qpCloseSpn.onclick = function()     { qpAddModal.style.display = "none"; }
+window.onclick = function(event)    { if (event.target == qpAddModal) { qpAddModal.style.display = "none"; } }

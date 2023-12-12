@@ -9,7 +9,7 @@ html {
 }
 
 body {
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Arial', sans-serif;
 }
 
 .top-header {
@@ -21,6 +21,11 @@ body {
     border-bottom-color: #4D5763;
     border-bottom-style: solid;
     color: #f1f1f1;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+
 }
 
 .top-header > .header-content:first-child {
@@ -40,8 +45,8 @@ body {
 	background-color: #171D26;
 	color: #f1f1f1;
 	display: flex;
-	height: 100vh;
-	padding: 0px 10px;
+	height: 1000vh !important;
+	padding-top: 5vh !important;
 }
 
 .sidebar {
@@ -145,7 +150,16 @@ div.main-area {
     border-color: #4a8af4;
 }
 
+#qpControls {
+    text-align: end;
+    font-weight: bolder;
+    font-size: larger;
+    align-items:baseline;
+}
 
+#qpLeft, #qpRight, #qpAddBtn {
+    cursor: pointer;
+}
 
 
 @media screen and (max-width: 700px) {
@@ -183,3 +197,38 @@ div.main-area {
     .quickPins { width: 100%; }
 } */
 
+/* CSS for various modals */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.qpAddModal {
+    background-color: #454343;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .qpCloseSpn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .qpCloseSpn:hover,
+  .qpCloseSpn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
