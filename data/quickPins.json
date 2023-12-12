@@ -1,0 +1,19 @@
+{
+    "pins":[
+        {
+            "pos":1,
+            "icon":"reddit.png",
+            "url":"https://www.reddit.com"
+        },
+        {
+            "pos":2,
+            "icon":"youtube.png",
+            "url":"youtube.com"
+        },
+        {
+            "pos":3,
+            "icon":"twitter.png",
+            "url":"twitter.com"
+        }
+    ]
+}
