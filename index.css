@@ -143,6 +143,7 @@ div.main-area {
     border-radius: 5px;
     background: url('./images/magnifier.png') no-repeat right 10px center;
     background-size: 20px 20px;
+    color: white;
 }
 
 #search-box:focus {

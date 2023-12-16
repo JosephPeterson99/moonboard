@@ -37,6 +37,8 @@ function showTime(){ // This makes the clock go
 
 let qpList = [];
 let qpIdx = 0;
+let maxPins = 15;
+let currentQP = 0;
 
 async function getQP() {
     try {
@@ -50,8 +52,7 @@ async function getQP() {
 }
 
 function calculateMaxQP() {
-    const maxPins = 12;
-    const pinWidth = 95; // Estimated width of a pin
+    const pinWidth = 105; // Estimated width of a pin
 
     const screenWidth = window.innerWidth;
     const possiblePins = Math.floor(screenWidth / pinWidth);
@@ -62,6 +63,7 @@ function calculateMaxQP() {
 async function populateQuickPins() {
     let maxQP = calculateMaxQP();
     qpList = (await getQP())['pins'];
+    currentQP = 0;
 
     const quickPins = document.getElementById("quickPins");
     quickPins.innerHTML = '';
@@ -79,6 +81,7 @@ async function populateQuickPins() {
             </div>
         `;
         quickPins.appendChild(qpDiv);
+        currentQP = currentQP + 1;
     }
 
     let filledSpots = quickPins.children.length;
@@ -90,13 +93,26 @@ async function populateQuickPins() {
     }
 }
 
+// async function moveQP(direction) {
+//     if (direction == 'left') {
+//         if (qpIdx > 0){
+//             qpIdx = qpIdx - 1;
+//         }
+//     } else if (direction == 'right') {
+//         if (qpIdx < calculateCurrentQP() && ) {
+//             qpIdx = qpIdx + 1;
+//         }
+//     }
+//     await populateQuickPins();
+// }
+
 let blankDiv = document.createElement('div');
 blankDiv.className = 'col';
 blankDiv.innerHTML = `
     <div class="squircleIcon">
         <a href="#" class='squircleIcon'>
             <img class="squircleWhite" src="icons/white.png" width="65vw" height="65vw">
-            <img class="squircleImage" src="icons/blank.png" width="65vw" height="65vw">
+            <img class="squircleImage" src="icons/add.png" width="65vw" height="65vw">
         </a>
     </div>
 `;
@@ -117,5 +133,7 @@ let qpAddBtn = document.getElementById("qpAddBtn");
 let qpCloseSpn = document.getElementsByClassName("qpCloseSpn")[0];
 
 qpAddBtn.onclick = function()       { qpAddModal.style.display = "block"; }
+// qpLeft.onclick = function ()        { moveQP('left'); }
+// qpRight.onclick = function()        { moveQP('right'); }
 qpCloseSpn.onclick = function()     { qpAddModal.style.display = "none"; }
 window.onclick = function(event)    { if (event.target == qpAddModal) { qpAddModal.style.display = "none"; } }

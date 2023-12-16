@@ -8,12 +8,27 @@
         {
             "pos":2,
             "icon":"youtube.png",
-            "url":"youtube.com"
+            "url":"https://www.youtube.com"
         },
         {
             "pos":3,
             "icon":"twitter.png",
-            "url":"twitter.com"
+            "url":"https://www.twitter.com"
+        },
+        {
+            "pos":4,
+            "icon":"twitch.png",
+            "url":"https://www.twitch.tv"
+        },
+        {
+            "pos":5,
+            "icon":"gamebanana.png",
+            "url":"https://www.gamebanana.com"
+        },
+        {
+            "pos":6,
+            "icon":"backloggery.png",
+            "url":"https://www.backloggery.com/lunarscribe0"
         }
     ]
 }
