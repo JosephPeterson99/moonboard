@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("headerClock").addEventListener("load", showTime);
 	document.getElementById("quickPins").addEventListener("load", populateQuickPins);
     window.addEventListener("resize", populateQuickPins);
+    
     showTime();
     populateQuickPins();
+
 });
 
 
@@ -109,7 +111,7 @@ async function populateQuickPins() {
 let blankDiv = document.createElement('div');
 blankDiv.className = 'col';
 blankDiv.innerHTML = `
-    <div class="squircleIcon">
+    <div class="squircleIcon" id="qpAddBtn">
         <a href="#" class='squircleIcon'>
             <img class="squircleWhite" src="icons/white.png" width="65vw" height="65vw">
             <img class="squircleImage" src="icons/add.png" width="65vw" height="65vw">
@@ -120,7 +122,7 @@ blankDiv.innerHTML = `
 let addDiv = document.createElement('div');
 addDiv.className = 'col';
 addDiv.innerHTML = `
-    <div class="squircleIcon">
+    <div class="squircleIcon" id="qpAddBtn">
         <a href="#" class='squircleIcon'>
             <img class="squircleWhite" src="icons/white.png" width="65vw" height="65vw">
             <img class="squircleImage" src="icons/add.png" width="65vw" height="65vw">
@@ -132,7 +134,6 @@ let qpAddModal = document.getElementById("qpAddModal");
 let qpAddBtn = document.getElementById("qpAddBtn");
 let qpCloseSpn = document.getElementsByClassName("qpCloseSpn")[0];
 
-qpAddBtn.onclick = function()       { qpAddModal.style.display = "block"; }
 // qpLeft.onclick = function ()        { moveQP('left'); }
 // qpRight.onclick = function()        { moveQP('right'); }
 qpCloseSpn.onclick = function()     { qpAddModal.style.display = "none"; }

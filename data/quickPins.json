@@ -29,6 +29,51 @@
             "pos":6,
             "icon":"backloggery.png",
             "url":"https://www.backloggery.com/lunarscribe0"
-        }
+        },
+        {
+            "pos":7,
+            "icon":"chatgpt.png",
+            "url":"https://chat.openai.com/"
+        },
+        {
+            "pos":8,
+            "icon":"drive.png",
+            "url":"https://drive.google.com/drive/u/0/my-drive"
+        },
+        {
+            "pos":9,
+            "icon":"instagram.png",
+            "url":"https://www.instagram.com/"
+        },
+        {
+            "pos":10,
+            "icon":"amazon.png",
+            "url":"https://www.amazon.com/"
+        },
+        {
+            "pos":11,
+            "icon":"ebay.png",
+            "url":"https://www.ebay.com/"
+        },
+        {
+            "pos":12,
+            "icon":"tiktok.png",
+            "url":"https://www.tiktok.com/"
+        },
+        {
+            "pos":13,
+            "icon":"linkedin.png",
+            "url":"https://www.linkedin.com/feed/"
+        },
+        {
+            "pos":13,
+            "icon":"github.png",
+            "url":"https://www.github.com/"
+        },
+        {
+            "pos":14,
+            "icon":"hltb.png",
+            "url":"https://www.howlongtobeat.com/"
+        }               
     ]
 }
